@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://https://rathwale-backend.onrender.com/api',
+  baseURL: 'https://rathwale-backend.onrender.com/api',
 });
 
 API.interceptors.request.use((req) => {
