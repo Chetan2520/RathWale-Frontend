@@ -100,7 +100,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-64px)] bg-gradient-to-br from-blue-50 to-white py-0 md:py-6 lg:py-12 px-10 md:px-8 lg:px-16">
+    <div className="min-h-[calc(100vh-64px)] bg-gradient-to-br from-blue-50 to-white py-2 sm:py-4 md:py-6 lg:py-12 px-2 sm:px-4 md:px-8 lg:px-16">
       <h1 className="text-4xl font-extrabold text-blue-700 mb-2 mt-4 px-4"> Dashboard</h1>
       <p className="text-lg text-gray-500 mb-8 px-4">Manage your business entries efficiently</p>
       {/* Stat Cards */}
@@ -125,26 +125,26 @@ const Dashboard = () => {
         ))}
       </div>
       {/* Add Entry & View Entries Buttons */}
-      <div className="flex flex-col md:flex-row gap-4 mb-10 px-4 w-1/2">
+      <div className="flex flex-col sm:flex-row gap-4 mb-10 px-0 sm:px-4 w-full sm:w-1/2">
         <button
           onClick={() => navigate('/entryformpage')}
-          className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xl font-bold py-4 rounded-2xl shadow-lg hover:from-blue-600 hover:to-purple-600 transition"
+          className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-lg sm:text-xl font-bold py-3 sm:py-4 rounded-2xl shadow-lg hover:from-blue-600 hover:to-purple-600 transition w-full"
         >
           <FaPlus /> Add Entry
         </button>
         <button
           onClick={() => navigate('/entries', { state: { updated: true } })}
-          className="flex-1 flex items-center justify-center gap-2 bg-white text-blue-700 text-xl font-bold py-4 rounded-2xl shadow-lg border border-blue-100 hover:bg-blue-50 transition"
+          className="flex-1 flex items-center justify-center gap-2 bg-white text-blue-700 text-lg sm:text-xl font-bold py-3 sm:py-4 rounded-2xl shadow-lg border border-blue-100 hover:bg-blue-50 transition w-full"
         >
           <FaEye /> View Entries
         </button>
       </div>
-      <div className=" bg-white rounded-2xl shadow-lg p-8 w-full px-4">
+      <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-8 w-full px-0 sm:px-4">
         <EntryTable entries={entries} onEdit={handleEdit} onDelete={handleDelete} loading={loading} />
       </div>
       {/* Inline Edit Form (shows only when editingEntry is set) */}
       {editingEntry && (
-        <div ref={formRef} className="max-w-7xl mx-auto bg-white rounded-2xl shadow-lg p-8 w-full px-4 mb-10">
+        <div ref={formRef} className="max-w-7xl mx-auto bg-white rounded-2xl shadow-lg p-4 sm:p-8 w-full px-0 sm:px-4 mb-10">
           <EntryForm onSubmit={handleAddOrUpdate} editingEntry={editingEntry} onCancel={() => setEditingEntry(null)} />
         </div>
       )}
